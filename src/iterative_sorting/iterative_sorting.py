@@ -13,10 +13,16 @@ def selection_sort(arr):
     return arr
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
-
+def bubble_sort(arr):
+    swap_flag = True
+    for i in range(len(arr)-1):
+        for j in range(0, len(arr)-i-1):
+            if arr[j+1] < arr[j]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swap_flag = True
+        if not swap_flag:
+            break
     return arr
-
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
